@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  active: false
+  simultaneous_calls: 1
+  last_connected_at: 2015-06-13 01:34:51
+
+two:
+  uid: MyString
+  active: false
+  simultaneous_calls: 1
+  last_connected_at: 2015-06-13 01:34:51
