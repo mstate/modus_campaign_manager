@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 
+  days_of_week: 1
+  start_time: 2015-06-13 01:34:47
+  end_time: 2015-06-13 01:34:47
+  case_selector_code: MyText
+
+two:
+  campaign_id: 
+  days_of_week: 1
+  start_time: 2015-06-13 01:34:47
+  end_time: 2015-06-13 01:34:47
+  case_selector_code: MyText
