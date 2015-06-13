@@ -1,33 +1,40 @@
-<h1>Listing calls</h1>
-
-<table>
+<%- model_class = Call -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Call %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Jobs</th>
-      <th>Final</th>
-      <th>Disposition</th>
-      <th>Results hash</th>
-      <th>Case</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:final) %></th>
+      <th><%= model_class.human_attribute_name(:disposition) %></th>
+      <th><%= model_class.human_attribute_name(:results_hash) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @calls.each do |call| %>
       <tr>
-        <td><%= call.jobs %></td>
+        <td><%= call.id %></td>
         <td><%= call.final %></td>
         <td><%= call.disposition %></td>
         <td><%= call.results_hash %></td>
-        <td><%= call.case %></td>
-        <td><%= link_to 'Show', call %></td>
-        <td><%= link_to 'Edit', edit_call_path(call) %></td>
-        <td><%= link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l call.created_at, format: :long %></td>
+        <td>
+          <%= link_to call_path(call), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to call_path(call), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Call', new_call_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_call_path,
+            :class => 'btn btn-primary' %>

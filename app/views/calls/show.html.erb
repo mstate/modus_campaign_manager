@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Call -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Call %></h1>
+</div>
 
-<p>
-  <strong>Jobs:</strong>
-  <%= @call.jobs %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:final) %></dt>
+      <dd><pre class="prettyprint"><%= @call.final %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:disposition) %></dt>
+      <dd><pre class="prettyprint"><%= @call.disposition %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:results_hash) %></dt>
+      <dd><pre class="prettyprint"><%= @call.results_hash %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Final:</strong>
-  <%= @call.final %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              calls_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_call_path(@call), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              call_path(@call),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Disposition:</strong>
-  <%= @call.disposition %>
-</p>
-
-<p>
-  <strong>Results hash:</strong>
-  <%= @call.results_hash %>
-</p>
-
-<p>
-  <strong>Case:</strong>
-  <%= @call.case %>
-</p>
-
-<%= link_to 'Edit', edit_call_path(@call) %> |
-<%= link_to 'Back', calls_path %>
