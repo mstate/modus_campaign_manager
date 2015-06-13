@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jobs_id: 
+  final: false
+  disposition: MyString
+  results_hash: MyText
+  case_id: 
+
+two:
+  jobs_id: 
+  final: false
+  disposition: MyString
+  results_hash: MyText
+  case_id: 
