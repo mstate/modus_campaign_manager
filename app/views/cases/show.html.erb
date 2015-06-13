@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Case -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Case %></h1>
+</div>
 
-<p>
-  <strong>Campaign:</strong>
-  <%= @case.campaign %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_number) %></dt>
+      <dd><pre class="prettyprint"><%= @case.phone_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:metadata_hash) %></dt>
+      <dd><pre class="prettyprint"><%= @case.metadata_hash %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @case.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fsa) %></dt>
+      <dd><pre class="prettyprint"><%= @case.fsa %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:language) %></dt>
+      <dd><pre class="prettyprint"><%= @case.language %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:offset_hours_from_eastern) %></dt>
+      <dd><pre class="prettyprint"><%= @case.offset_hours_from_eastern %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @case.phone_number %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              cases_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_case_path(@case), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              case_path(@case),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Metadata hash:</strong>
-  <%= @case.metadata_hash %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @case.state %>
-</p>
-
-<p>
-  <strong>Fsa:</strong>
-  <%= @case.fsa %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @case.language %>
-</p>
-
-<p>
-  <strong>Offset hours from eastern:</strong>
-  <%= @case.offset_hours_from_eastern %>
-</p>
-
-<%= link_to 'Edit', edit_case_path(@case) %> |
-<%= link_to 'Back', cases_path %>

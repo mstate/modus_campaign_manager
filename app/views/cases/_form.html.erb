@@ -1,17 +1,46 @@
-<%= simple_form_for(@case) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :campaign %>
-    <%= f.input :phone_number %>
-    <%= f.input :metadata_hash %>
-    <%= f.input :state %>
-    <%= f.input :fsa %>
-    <%= f.input :language %>
-    <%= f.input :offset_hours_from_eastern %>
+<%= form_for @case, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :phone_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :phone_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :metadata_hash, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :metadata_hash, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fsa, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fsa, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :language, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :language, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :offset_hours_from_eastern, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :offset_hours_from_eastern, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  cases_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
