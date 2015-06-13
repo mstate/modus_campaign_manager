@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 
+  phone_number: 1
+  metadata_hash: MyText
+  state: 1
+  fsa: MyString
+  language: MyString
+  offset_hours_from_eastern: 1
+
+two:
+  campaign_id: 
+  phone_number: 1
+  metadata_hash: MyText
+  state: 1
+  fsa: MyString
+  language: MyString
+  offset_hours_from_eastern: 1
