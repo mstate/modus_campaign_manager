@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jobs:</strong>
+  <%= @call.jobs %>
+</p>
+
+<p>
+  <strong>Final:</strong>
+  <%= @call.final %>
+</p>
+
+<p>
+  <strong>Disposition:</strong>
+  <%= @call.disposition %>
+</p>
+
+<p>
+  <strong>Results hash:</strong>
+  <%= @call.results_hash %>
+</p>
+
+<p>
+  <strong>Case:</strong>
+  <%= @call.case %>
+</p>
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

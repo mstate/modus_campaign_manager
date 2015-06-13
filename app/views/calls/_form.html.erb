@@ -1,0 +1,15 @@
+<%= simple_form_for(@call) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :jobs %>
+    <%= f.input :final %>
+    <%= f.input :disposition %>
+    <%= f.input :results_hash %>
+    <%= f.association :case %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
