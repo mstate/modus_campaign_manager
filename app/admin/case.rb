@@ -1,4 +1,5 @@
 ActiveAdmin.register Case do
+  permit_params :phone_number, :metadata_hash, :state, :fsa, :language, :offset_hours_from_eastern
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
