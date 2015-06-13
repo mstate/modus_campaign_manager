@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  survey_id: 
+  name: MyString
+  question_media: MyText
+  choice_prompt_repeat_media: MyText
+  no_choice_media: MyText
+  invalid_choice_media: MyText
+  maximum_repeats_media: MyText
+  maximum_invalid_repeats_media: MyText
+  goto_name: MyString
+  goto_name_code: MyText
+  menu_render_options: MyText
+
+two:
+  survey_id: 
+  name: MyString
+  question_media: MyText
+  choice_prompt_repeat_media: MyText
+  no_choice_media: MyText
+  invalid_choice_media: MyText
+  maximum_repeats_media: MyText
+  maximum_invalid_repeats_media: MyText
+  goto_name: MyString
+  goto_name_code: MyText
+  menu_render_options: MyText
