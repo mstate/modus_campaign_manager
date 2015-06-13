@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  choosable_type: MyString
+  choosable_id: 1
+  choice_type: 1
+  result: MyString
+  goto_name: MyString
+  goto_name_code: MyText
+  question_id: 
+  choice_set_id: 
+
+two:
+  choosable_type: MyString
+  choosable_id: 1
+  choice_type: 1
+  result: MyString
+  goto_name: MyString
+  goto_name_code: MyText
+  question_id: 
+  choice_set_id: 
