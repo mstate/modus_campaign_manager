@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @case.campaign %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @case.phone_number %>
+</p>
+
+<p>
+  <strong>Metadata hash:</strong>
+  <%= @case.metadata_hash %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @case.state %>
+</p>
+
+<p>
+  <strong>Fsa:</strong>
+  <%= @case.fsa %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @case.language %>
+</p>
+
+<p>
+  <strong>Offset hours from eastern:</strong>
+  <%= @case.offset_hours_from_eastern %>
+</p>
+
+<%= link_to 'Edit', edit_case_path(@case) %> |
+<%= link_to 'Back', cases_path %>

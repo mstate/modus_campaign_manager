@@ -1,0 +1,17 @@
+<%= simple_form_for(@case) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :campaign %>
+    <%= f.input :phone_number %>
+    <%= f.input :metadata_hash %>
+    <%= f.input :state %>
+    <%= f.input :fsa %>
+    <%= f.input :language %>
+    <%= f.input :offset_hours_from_eastern %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

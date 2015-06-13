@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cases
+
   resources :questions
 
   resources :surveys
