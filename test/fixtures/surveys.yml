@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 
+  default_invalid_choice_media: MyText
+  default_no_choice_media: MyText
+  default_maximum_repeats_media: MyText
+  default_maximum_invalid_repeats_media: MyText
+  default_repeat_question_choices: MyText
+  default_repeat_options_choices: MyText
+  default_choice_prompt_repeat_media: MyText
+
+two:
+  campaign_id: 
+  default_invalid_choice_media: MyText
+  default_no_choice_media: MyText
+  default_maximum_repeats_media: MyText
+  default_maximum_invalid_repeats_media: MyText
+  default_repeat_question_choices: MyText
+  default_repeat_options_choices: MyText
+  default_choice_prompt_repeat_media: MyText
