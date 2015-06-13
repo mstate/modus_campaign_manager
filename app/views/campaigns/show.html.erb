@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Campaign -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Campaign %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @campaign.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @campaign.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @campaign.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:active) %></dt>
+      <dd><pre class="prettyprint"><%= @campaign.active %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:case_selector_code) %></dt>
+      <dd><pre class="prettyprint"><%= @campaign.case_selector_code %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @campaign.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              campaigns_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_campaign_path(@campaign), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              campaign_path(@campaign),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Active:</strong>
-  <%= @campaign.active %>
-</p>
-
-<p>
-  <strong>Case selector code:</strong>
-  <%= @campaign.case_selector_code %>
-</p>
-
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
