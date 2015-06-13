@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Question -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Question %></h1>
+</div>
 
-<p>
-  <strong>Survey:</strong>
-  <%= @question.survey %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @question.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:question_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.question_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:choice_prompt_repeat_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.choice_prompt_repeat_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:no_choice_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.no_choice_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:invalid_choice_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.invalid_choice_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:maximum_repeats_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.maximum_repeats_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:maximum_invalid_repeats_media) %></dt>
+      <dd><pre class="prettyprint"><%= @question.maximum_invalid_repeats_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:goto_name) %></dt>
+      <dd><pre class="prettyprint"><%= @question.goto_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:goto_name_code) %></dt>
+      <dd><pre class="prettyprint"><%= @question.goto_name_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:menu_render_options) %></dt>
+      <dd><pre class="prettyprint"><%= @question.menu_render_options %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @question.name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              questions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_question_path(@question), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              question_path(@question),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Question media:</strong>
-  <%= @question.question_media %>
-</p>
-
-<p>
-  <strong>Choice prompt repeat media:</strong>
-  <%= @question.choice_prompt_repeat_media %>
-</p>
-
-<p>
-  <strong>No choice media:</strong>
-  <%= @question.no_choice_media %>
-</p>
-
-<p>
-  <strong>Invalid choice media:</strong>
-  <%= @question.invalid_choice_media %>
-</p>
-
-<p>
-  <strong>Maximum repeats media:</strong>
-  <%= @question.maximum_repeats_media %>
-</p>
-
-<p>
-  <strong>Maximum invalid repeats media:</strong>
-  <%= @question.maximum_invalid_repeats_media %>
-</p>
-
-<p>
-  <strong>Goto name:</strong>
-  <%= @question.goto_name %>
-</p>
-
-<p>
-  <strong>Goto name code:</strong>
-  <%= @question.goto_name_code %>
-</p>
-
-<p>
-  <strong>Menu render options:</strong>
-  <%= @question.menu_render_options %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>

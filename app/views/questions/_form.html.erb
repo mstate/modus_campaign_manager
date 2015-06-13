@@ -1,21 +1,70 @@
-<%= simple_form_for(@question) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :survey %>
-    <%= f.input :name %>
-    <%= f.input :question_media %>
-    <%= f.input :choice_prompt_repeat_media %>
-    <%= f.input :no_choice_media %>
-    <%= f.input :invalid_choice_media %>
-    <%= f.input :maximum_repeats_media %>
-    <%= f.input :maximum_invalid_repeats_media %>
-    <%= f.input :goto_name %>
-    <%= f.input :goto_name_code %>
-    <%= f.input :menu_render_options %>
+<%= form_for @question, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :question_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :question_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :choice_prompt_repeat_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :choice_prompt_repeat_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :no_choice_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :no_choice_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :invalid_choice_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :invalid_choice_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :maximum_repeats_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :maximum_repeats_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :maximum_invalid_repeats_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :maximum_invalid_repeats_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :goto_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :goto_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :goto_name_code, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :goto_name_code, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :menu_render_options, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :menu_render_options, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  questions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

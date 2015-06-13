@@ -1,27 +1,29 @@
-<h1>Listing questions</h1>
-
-<table>
+<%- model_class = Question -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Question %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Survey</th>
-      <th>Name</th>
-      <th>Question media</th>
-      <th>Choice prompt repeat media</th>
-      <th>No choice media</th>
-      <th>Invalid choice media</th>
-      <th>Maximum repeats media</th>
-      <th>Maximum invalid repeats media</th>
-      <th>Goto name</th>
-      <th>Goto name code</th>
-      <th>Menu render options</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:question_media) %></th>
+      <th><%= model_class.human_attribute_name(:choice_prompt_repeat_media) %></th>
+      <th><%= model_class.human_attribute_name(:no_choice_media) %></th>
+      <th><%= model_class.human_attribute_name(:invalid_choice_media) %></th>
+      <th><%= model_class.human_attribute_name(:maximum_repeats_media) %></th>
+      <th><%= model_class.human_attribute_name(:maximum_invalid_repeats_media) %></th>
+      <th><%= model_class.human_attribute_name(:goto_name) %></th>
+      <th><%= model_class.human_attribute_name(:goto_name_code) %></th>
+      <th><%= model_class.human_attribute_name(:menu_render_options) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.survey %></td>
+        <td><%= question.id %></td>
         <td><%= question.name %></td>
         <td><%= question.question_media %></td>
         <td><%= question.choice_prompt_repeat_media %></td>
@@ -32,14 +34,21 @@
         <td><%= question.goto_name %></td>
         <td><%= question.goto_name_code %></td>
         <td><%= question.menu_render_options %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l question.created_at, format: :long %></td>
+        <td>
+          <%= link_to question_path(question), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to question_path(question), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_question_path,
+            :class => 'btn btn-primary' %>
