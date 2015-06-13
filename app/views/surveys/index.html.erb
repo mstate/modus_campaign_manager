@@ -1,24 +1,26 @@
-<h1>Listing surveys</h1>
-
-<table>
+<%- model_class = Survey -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Survey %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Campaign</th>
-      <th>Default invalid choice media</th>
-      <th>Default no choice media</th>
-      <th>Default maximum repeats media</th>
-      <th>Default maximum invalid repeats media</th>
-      <th>Default repeat question choices</th>
-      <th>Default repeat options choices</th>
-      <th>Default choice prompt repeat media</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:default_invalid_choice_media) %></th>
+      <th><%= model_class.human_attribute_name(:default_no_choice_media) %></th>
+      <th><%= model_class.human_attribute_name(:default_maximum_repeats_media) %></th>
+      <th><%= model_class.human_attribute_name(:default_maximum_invalid_repeats_media) %></th>
+      <th><%= model_class.human_attribute_name(:default_repeat_question_choices) %></th>
+      <th><%= model_class.human_attribute_name(:default_repeat_options_choices) %></th>
+      <th><%= model_class.human_attribute_name(:default_choice_prompt_repeat_media) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= survey.campaign %></td>
+        <td><%= survey.id %></td>
         <td><%= survey.default_invalid_choice_media %></td>
         <td><%= survey.default_no_choice_media %></td>
         <td><%= survey.default_maximum_repeats_media %></td>
@@ -26,14 +28,21 @@
         <td><%= survey.default_repeat_question_choices %></td>
         <td><%= survey.default_repeat_options_choices %></td>
         <td><%= survey.default_choice_prompt_repeat_media %></td>
-        <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l survey.created_at, format: :long %></td>
+        <td>
+          <%= link_to survey_path(survey), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to survey_path(survey), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Survey', new_survey_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_survey_path,
+            :class => 'btn btn-primary' %>

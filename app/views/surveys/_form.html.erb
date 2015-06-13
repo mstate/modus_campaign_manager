@@ -1,18 +1,52 @@
-<%= simple_form_for(@survey) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :campaign %>
-    <%= f.input :default_invalid_choice_media %>
-    <%= f.input :default_no_choice_media %>
-    <%= f.input :default_maximum_repeats_media %>
-    <%= f.input :default_maximum_invalid_repeats_media %>
-    <%= f.input :default_repeat_question_choices %>
-    <%= f.input :default_repeat_options_choices %>
-    <%= f.input :default_choice_prompt_repeat_media %>
+<%= form_for @survey, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :default_invalid_choice_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_invalid_choice_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_no_choice_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_no_choice_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_maximum_repeats_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_maximum_repeats_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_maximum_invalid_repeats_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_maximum_invalid_repeats_media, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_repeat_question_choices, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_repeat_question_choices, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_repeat_options_choices, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_repeat_options_choices, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :default_choice_prompt_repeat_media, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :default_choice_prompt_repeat_media, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  surveys_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

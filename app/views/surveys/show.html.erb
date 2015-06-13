@@ -1,44 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Survey -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Survey %></h1>
+</div>
 
-<p>
-  <strong>Campaign:</strong>
-  <%= @survey.campaign %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_invalid_choice_media) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_invalid_choice_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_no_choice_media) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_no_choice_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_maximum_repeats_media) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_maximum_repeats_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_maximum_invalid_repeats_media) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_maximum_invalid_repeats_media %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_repeat_question_choices) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_repeat_question_choices %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_repeat_options_choices) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_repeat_options_choices %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:default_choice_prompt_repeat_media) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.default_choice_prompt_repeat_media %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Default invalid choice media:</strong>
-  <%= @survey.default_invalid_choice_media %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              surveys_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_survey_path(@survey), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              survey_path(@survey),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Default no choice media:</strong>
-  <%= @survey.default_no_choice_media %>
-</p>
-
-<p>
-  <strong>Default maximum repeats media:</strong>
-  <%= @survey.default_maximum_repeats_media %>
-</p>
-
-<p>
-  <strong>Default maximum invalid repeats media:</strong>
-  <%= @survey.default_maximum_invalid_repeats_media %>
-</p>
-
-<p>
-  <strong>Default repeat question choices:</strong>
-  <%= @survey.default_repeat_question_choices %>
-</p>
-
-<p>
-  <strong>Default repeat options choices:</strong>
-  <%= @survey.default_repeat_options_choices %>
-</p>
-
-<p>
-  <strong>Default choice prompt repeat media:</strong>
-  <%= @survey.default_choice_prompt_repeat_media %>
-</p>
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
