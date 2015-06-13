@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @survey.campaign %>
+</p>
+
+<p>
+  <strong>Default invalid choice media:</strong>
+  <%= @survey.default_invalid_choice_media %>
+</p>
+
+<p>
+  <strong>Default no choice media:</strong>
+  <%= @survey.default_no_choice_media %>
+</p>
+
+<p>
+  <strong>Default maximum repeats media:</strong>
+  <%= @survey.default_maximum_repeats_media %>
+</p>
+
+<p>
+  <strong>Default maximum invalid repeats media:</strong>
+  <%= @survey.default_maximum_invalid_repeats_media %>
+</p>
+
+<p>
+  <strong>Default repeat question choices:</strong>
+  <%= @survey.default_repeat_question_choices %>
+</p>
+
+<p>
+  <strong>Default repeat options choices:</strong>
+  <%= @survey.default_repeat_options_choices %>
+</p>
+
+<p>
+  <strong>Default choice prompt repeat media:</strong>
+  <%= @survey.default_choice_prompt_repeat_media %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

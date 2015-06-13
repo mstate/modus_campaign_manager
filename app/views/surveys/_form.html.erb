@@ -1,0 +1,18 @@
+<%= simple_form_for(@survey) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :campaign %>
+    <%= f.input :default_invalid_choice_media %>
+    <%= f.input :default_no_choice_media %>
+    <%= f.input :default_maximum_repeats_media %>
+    <%= f.input :default_maximum_invalid_repeats_media %>
+    <%= f.input :default_repeat_question_choices %>
+    <%= f.input :default_repeat_options_choices %>
+    <%= f.input :default_choice_prompt_repeat_media %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
