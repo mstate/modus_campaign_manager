@@ -1,0 +1,21 @@
+<%= simple_form_for(@question) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :survey %>
+    <%= f.input :name %>
+    <%= f.input :question_media %>
+    <%= f.input :choice_prompt_repeat_media %>
+    <%= f.input :no_choice_media %>
+    <%= f.input :invalid_choice_media %>
+    <%= f.input :maximum_repeats_media %>
+    <%= f.input :maximum_invalid_repeats_media %>
+    <%= f.input :goto_name %>
+    <%= f.input :goto_name_code %>
+    <%= f.input :menu_render_options %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

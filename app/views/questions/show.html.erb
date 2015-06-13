@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Survey:</strong>
+  <%= @question.survey %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @question.name %>
+</p>
+
+<p>
+  <strong>Question media:</strong>
+  <%= @question.question_media %>
+</p>
+
+<p>
+  <strong>Choice prompt repeat media:</strong>
+  <%= @question.choice_prompt_repeat_media %>
+</p>
+
+<p>
+  <strong>No choice media:</strong>
+  <%= @question.no_choice_media %>
+</p>
+
+<p>
+  <strong>Invalid choice media:</strong>
+  <%= @question.invalid_choice_media %>
+</p>
+
+<p>
+  <strong>Maximum repeats media:</strong>
+  <%= @question.maximum_repeats_media %>
+</p>
+
+<p>
+  <strong>Maximum invalid repeats media:</strong>
+  <%= @question.maximum_invalid_repeats_media %>
+</p>
+
+<p>
+  <strong>Goto name:</strong>
+  <%= @question.goto_name %>
+</p>
+
+<p>
+  <strong>Goto name code:</strong>
+  <%= @question.goto_name_code %>
+</p>
+
+<p>
+  <strong>Menu render options:</strong>
+  <%= @question.menu_render_options %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
